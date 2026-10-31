@@ -6,7 +6,7 @@ import { OvalButton, Reveal, TornEdge, scrollTo } from "./ui";
 
 const FEATURES = [
   { icon: <TopHat className="h-8 w-9 [&_path]:fill-[var(--ink)] [&_ellipse]:fill-[var(--ink)] [&_rect]:fill-[var(--paper)]" />, title: "Уникальный интерьер", text: "Декор в стиле Алисы в Стране чудес" },
-  { icon: <Coffee className="h-7 w-7" strokeWidth={1.6} />, title: "Для любых событий", text: "Дни рождения, вечеринки, свадьбы, съемки, мастер-классы" },
+  { icon: <Coffee className="h-7 w-7" strokeWidth={1.6} />, title: "Для любых событий", text: "Дни рождения, вечеринки, съемки, мастер-классы" },
   { icon: <MapPin className="h-7 w-7" strokeWidth={1.6} />, title: "Удобное расположение", text: "В центре города" },
 ];
 
