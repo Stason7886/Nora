@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { Logo, TopHat } from "./Logo";
-import { scrollTo } from "./ui";
+import { scrollTo, openMax } from "./ui";
 
 export const NAV = [
   { id: "about", label: "О нас" },
@@ -71,7 +71,7 @@ export const Header = () => {
             ))}
           </nav>
           <div className="flex items-center gap-4 sm:gap-6">
-            <button data-testid="header-book-btn" onClick={() => scrollTo("contacts")} className="group hidden items-center gap-3 rounded-full border border-[#c9a45a]/70 py-2 pl-3 pr-6 font-serif-rn text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[var(--cream)] transition-colors duration-500 hover:bg-[var(--crimson)] hover:border-[var(--crimson)] sm:flex">
+            <button data-testid="header-book-btn" onClick={openMax} className="group hidden items-center gap-3 rounded-full border border-[#c9a45a]/70 py-2 pl-3 pr-6 font-serif-rn text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[var(--cream)] transition-colors duration-500 hover:bg-[var(--crimson)] hover:border-[var(--crimson)] sm:flex">
               <TopHat className="h-6 w-7 transition-transform duration-500 group-hover:-rotate-12" />
               Забронировать
             </button>

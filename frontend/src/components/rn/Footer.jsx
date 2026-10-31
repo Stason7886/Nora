@@ -1,12 +1,14 @@
 import { Instagram, MapPin, Send } from "lucide-react";
 import { Ears, Logo, TopHat } from "./Logo";
-import { scrollTo } from "./ui";
+import { MAX_URL, openMax } from "./ui";
 
 const Vk = () => <span className="font-serif-rn text-base font-bold leading-none">VK</span>;
+const Max = () => <span className="font-serif-rn text-[0.8rem] font-bold leading-none">MAX</span>;
 const SOCIALS = [
   { id: "instagram", icon: <Instagram className="h-5 w-5" /> },
   { id: "telegram", icon: <Send className="h-5 w-5" /> },
   { id: "vk", icon: <Vk /> },
+  { id: "max", icon: <Max />, href: MAX_URL },
 ];
 
 export const Footer = () => (
@@ -15,7 +17,7 @@ export const Footer = () => (
       <Logo size="sm" testId="footer-logo" />
       <div className="flex items-center gap-4">
         {SOCIALS.map((s) => (
-          <a key={s.id} href="#" data-testid={`footer-social-${s.id}`} aria-label={s.id} className="flex h-11 w-11 items-center justify-center rounded-full border border-[#f5eedd]/25 transition-[background-color,transform,border-color] duration-300 hover:-translate-y-1 hover:border-[var(--crimson-2)] hover:bg-[var(--crimson)]">
+          <a key={s.id} href={s.href || "#"} {...(s.href ? { target: "_blank", rel: "noopener noreferrer" } : {})} data-testid={`footer-social-${s.id}`} aria-label={s.id} className="flex h-11 w-11 items-center justify-center rounded-full border border-[#f5eedd]/25 transition-[background-color,transform,border-color] duration-300 hover:-translate-y-1 hover:border-[var(--crimson-2)] hover:bg-[var(--crimson)]">
             {s.icon}
           </a>
         ))}
@@ -25,7 +27,7 @@ export const Footer = () => (
         <p className="leading-snug">Погрузись в сказку<br />уже сегодня</p>
         <Ears className="h-10 w-12 text-[var(--cream)]" />
       </div>
-      <button data-testid="footer-book-btn" onClick={() => scrollTo("contacts")} className="group flex items-center gap-3 rounded-full bg-gradient-to-b from-[var(--crimson-2)] to-[var(--crimson)] py-3 pl-7 pr-4 font-serif-rn text-[0.75rem] font-bold uppercase tracking-[0.22em] text-[var(--cream)] shadow-[0_10px_30px_rgba(196,38,43,0.4)] outline-dashed outline-1 -outline-offset-4 outline-[#f5eedd]/40 transition-transform duration-300 hover:scale-105">
+      <button data-testid="footer-book-btn" onClick={openMax} className="group flex items-center gap-3 rounded-full bg-gradient-to-b from-[var(--crimson-2)] to-[var(--crimson)] py-3 pl-7 pr-4 font-serif-rn text-[0.75rem] font-bold uppercase tracking-[0.22em] text-[var(--cream)] shadow-[0_10px_30px_rgba(196,38,43,0.4)] outline-dashed outline-1 -outline-offset-4 outline-[#f5eedd]/40 transition-transform duration-300 hover:scale-105">
         Забронировать
         <TopHat className="h-6 w-7 transition-transform duration-500 group-hover:rotate-12" />
       </button>
