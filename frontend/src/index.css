@@ -13,6 +13,20 @@
     --crimson-2: #c4262b;
     --gold: #c9a45a;
     --cream: #f5eedd;
+    --background: 40 50% 92%;
+    --foreground: 20 20% 9%;
+    --popover: 40 50% 92%;
+    --popover-foreground: 20 20% 9%;
+    --primary: 357 76% 36%;
+    --primary-foreground: 40 50% 92%;
+    --accent: 38 40% 80%;
+    --accent-foreground: 20 20% 9%;
+    --muted: 38 40% 85%;
+    --muted-foreground: 25 12% 32%;
+    --border: 30 20% 70%;
+    --input: 30 20% 70%;
+    --ring: 357 76% 36%;
+    --radius: 0.25rem;
 }
 
 html.lenis, html.lenis body { height: auto; }

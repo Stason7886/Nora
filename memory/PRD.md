@@ -19,9 +19,14 @@ Frontend-only React landing (CRA + Tailwind + framer-motion + lenis). Components
 - About, Space (интерактивные зоны), Events (полароиды), галерея-бегущая строка, Footer
 - Lenis плавный скролл, scroll-reveal, рваные края пергамента
 
+## Implemented (2026-10-31, iteration 2)
+- Easter egg: Cheshire cat (bottom-left corner, hover 1.2s / long-press)
+- Booking form (#contacts): name, phone, date (calendar, no past dates), format, guests, promo, comment → POST /api/bookings (MongoDB `bookings`)
+- Secret promo: 5th cat appearance (per browser, localStorage) → GET /api/promo/cheshire → gift card, auto-fills form; server validates code. Code/discount in backend .env PROMO_CODE / PROMO_DISCOUNT
+
 ## Backlog
 - P1: реальный адрес/телефон/ссылки соцсетей (сейчас плейсхолдеры)
-- P1: форма заявки на бронь
+- P1: просмотр заявок для владельца (админка) / уведомления о новых заявках
 - P2: полноценная галерея с лайтбоксом, страница мероприятий
 
 ## Next tasks

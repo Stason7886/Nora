@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
+import { Copy, Gift, X } from "lucide-react";
+import { scrollTo } from "./ui";
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const GIFT_AT = 5;
 
 const QUOTES = ["Мы все здесь не в своём уме.", "Куда ты хочешь попасть?", "Всё чудесатее и чудесатее…"];
 const HOLD_MS = 1200;
@@ -30,17 +36,58 @@ const Head = () => (
   </g>
 );
 
+const GiftCard = ({ gift, onClose }) => {
+  const copy = () => { navigator.clipboard?.writeText(gift.code).catch(() => {}); };
+  return (
+    <motion.div
+      data-testid="cheshire-gift"
+      initial={{ opacity: 0, y: 60, rotate: -8, scale: 0.8 }}
+      animate={{ opacity: 1, y: 0, rotate: -2, scale: 1 }}
+      exit={{ opacity: 0, y: 40, scale: 0.85 }}
+      transition={{ type: "spring", stiffness: 90, damping: 13 }}
+      className="parchment fixed bottom-32 left-4 z-50 w-[min(320px,calc(100vw-2rem))] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.65)] outline-dashed outline-1 -outline-offset-8 outline-[#a3161c]/60 sm:bottom-40 sm:left-8"
+    >
+      <button data-testid="cheshire-gift-close" onClick={onClose} aria-label="Закрыть" className="absolute right-3 top-3 p-1 text-[var(--ink)] transition-transform hover:rotate-90"><X className="h-4 w-4" /></button>
+      <Gift className="h-7 w-7 text-[var(--crimson)]" />
+      <p className="mt-3 font-hand text-2xl leading-tight text-[var(--ink)]">Ты заходил ко мне пять раз. Держи подарок!</p>
+      <p className="mt-2 text-sm text-[var(--ink-soft)]">Скидка {gift.discount}% на бронирование лофта</p>
+      <button data-testid="cheshire-gift-code" onClick={copy} className="mt-4 flex w-full items-center justify-between border border-dashed border-[var(--crimson)] px-4 py-3 font-serif-rn text-lg font-bold tracking-[0.2em] text-[var(--crimson)] transition-colors hover:bg-[#a3161c]/10">
+        {gift.code}<Copy className="h-4 w-4" />
+      </button>
+      <button data-testid="cheshire-gift-apply" onClick={() => { onClose(); scrollTo("contacts"); }} className="mt-4 w-full rounded-full bg-[var(--crimson)] py-3 font-serif-rn text-xs font-bold uppercase tracking-[0.22em] text-[var(--cream)] transition-colors hover:bg-[var(--crimson-2)]">Применить к заявке</button>
+    </motion.div>
+  );
+};
+
 export const Cheshire = () => {
   const [shown, setShown] = useState(false);
   const [q, setQ] = useState(0);
+  const [gift, setGift] = useState(null);
   const timer = useRef(null);
 
-  const start = () => { clearTimeout(timer.current); timer.current = setTimeout(() => { setQ((n) => (n + 1) % QUOTES.length); setShown(true); }, HOLD_MS); };
+  const reveal = async () => {
+    const n = Number(localStorage.getItem("rn_cat_count") || 0) + 1;
+    localStorage.setItem("rn_cat_count", String(n));
+    setQ((v) => (v + 1) % QUOTES.length);
+    setShown(true);
+    if (n !== GIFT_AT) return;
+    try {
+      const { data } = await axios.get(`${API}/promo/cheshire`);
+      if (!data?.code) return;
+      localStorage.setItem("rn_promo", data.code);
+      window.dispatchEvent(new Event("rn-promo"));
+      setGift(data);
+    } catch (e) { /* кот сегодня не в духе */ }
+  };
+
+  const start = () => { clearTimeout(timer.current); timer.current = setTimeout(reveal, HOLD_MS); };
   const stop = () => { clearTimeout(timer.current); setShown(false); };
 
   useEffect(() => { return () => clearTimeout(timer.current); }, []);
 
   return (
+    <>
+    <AnimatePresence>{gift && <GiftCard gift={gift} onClose={() => setGift(null)} />}</AnimatePresence>
     <div
       data-testid="cheshire-hotspot"
       onPointerEnter={start}
@@ -67,7 +114,7 @@ export const Cheshire = () => {
               exit={{ opacity: 0, transition: { duration: 0.2 } }}
               className="absolute -top-12 left-16 w-52 rounded-2xl bg-[#f5eedd] px-4 py-2 font-hand text-lg leading-tight text-[#1c1613] shadow-[0_10px_30px_rgba(0,0,0,0.5)] sm:left-24"
             >
-              {QUOTES[q]}
+              {gift ? "Держи подарок…" : QUOTES[q]}
             </motion.p>
             <svg viewBox="0 0 200 160" className="w-full overflow-visible">
               <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.5, duration: 0.6 } }} exit={{ opacity: 0, transition: { duration: 0.4 } }}><Head /></motion.g>
@@ -78,5 +125,6 @@ export const Cheshire = () => {
         )}
       </AnimatePresence>
     </div>
+    </>
   );
 };
