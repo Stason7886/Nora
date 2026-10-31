@@ -9,6 +9,7 @@ import { Events } from "@/components/rn/Events";
 import { Marquee } from "@/components/rn/Marquee";
 import { Footer } from "@/components/rn/Footer";
 import { Cheshire } from "@/components/rn/Cheshire";
+import { MaxFab } from "@/components/rn/MaxFab";
 import { Toaster } from "sonner";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Marquee />
       <Footer />
       <Cheshire />
+      <MaxFab />
       <Toaster position="top-center" richColors />
     </main>
   );
