@@ -20,7 +20,7 @@ export const Footer = () => (
           </a>
         ))}
       </div>
-      <p data-testid="footer-address" className="flex items-center gap-2 text-sm text-[#d9cfbd]"><MapPin className="h-4 w-4 text-[var(--gold)]" />г. Москва, ул. Волшебная, д. 10</p>
+      <p data-testid="footer-address" className="flex items-center gap-2 text-sm text-[#d9cfbd]"><MapPin className="h-4 w-4 text-[var(--gold)]" />г. Санкт-Петербург, Заневский проспект, 9/8</p>
       <div className="flex items-center gap-3 text-sm text-[#d9cfbd]">
         <p className="leading-snug">Погрузись в сказку<br />уже сегодня</p>
         <Ears className="h-10 w-12 text-[var(--cream)]" />
