@@ -5,29 +5,22 @@
 (доп.: желательно сделать все качественно и профессионально; изображения — ИИ + сток; «Забронировать» — прокрутка к контактам; адрес пользователь заменит сам)
 
 ## Architecture
-Frontend-only React landing (CRA + Tailwind + framer-motion + lenis). Components in /app/frontend/src/components/rn/. Images in /app/frontend/public/img (AI-generated). Favicon /public/favicon.svg. No backend use.
+React landing (CRA + Tailwind + framer-motion + lenis), components in /app/frontend/src/components/rn/. AI images in /public/img. FastAPI backend: GET /api/promo/cheshire (code/discount from .env PROMO_CODE / PROMO_DISCOUNT); POST /api/bookings exists but unused (form removed by user).
 
 ## User personas
-Гости, ищущие площадку для дня рождения/вечеринки/корпоратива/съёмки в стиле Алисы в Стране чудес.
+Гости, ищущие площадку для праздника в стиле Алисы в Стране чудес.
 
 ## Core requirements
-Повторить структуру макета: шапка, герой, «О нас» (пергамент), «Пространство» (тёмная, зоны), «Мероприятия» (полароиды), футер с шахматным полом.
+Структура макета: шапка, герой, «О нас», «Пространство», «Мероприятия», футер (#contacts).
 
-## Implemented (2026-10-31)
-- Header (sticky, nav, Забронировать → #contacts, бургер с полноэкранным меню)
-- Hero: построчное раскрытие заголовка, 3D-наклон за мышью, параллакс, пыльца, билет-CTA
-- About, Space (интерактивные зоны), Events (полароиды), галерея-бегущая строка, Footer
-- Lenis плавный скролл, scroll-reveal, рваные края пергамента
-
-## Implemented (2026-10-31, iteration 2)
-- Easter egg: Cheshire cat (bottom-left corner, hover 1.2s / long-press)
-- Booking form (#contacts): name, phone, date (calendar, no past dates), format, guests, promo, comment → POST /api/bookings (MongoDB `bookings`)
-- Secret promo: 5th cat appearance (per browser, localStorage) → GET /api/promo/cheshire → gift card, auto-fills form; server validates code. Code/discount in backend .env PROMO_CODE / PROMO_DISCOUNT
+## Implemented
+- 2026-10-31: лендинг по макету, анимации, lenis, галерея-бегущая строка
+- 2026-10-31: Чеширский кот (угол, долгое наведение); на 5-й раз — карточка с промокодом («назовите при бронировании»)
+- 2026-10-31: форма бронирования добавлена, затем удалена по просьбе пользователя; «свадьбы» убраны из блока «О нас»
 
 ## Backlog
-- P1: реальный адрес/телефон/ссылки соцсетей (сейчас плейсхолдеры)
-- P1: просмотр заявок для владельца (админка) / уведомления о новых заявках
-- P2: полноценная галерея с лайтбоксом, страница мероприятий
+- P1: реальный адрес/телефон/ссылки соцсетей (плейсхолдеры)
+- P2: галерея с лайтбоксом, звуки
 
 ## Next tasks
-Заменить контакты, добавить форму бронирования.
+Заменить контакты.

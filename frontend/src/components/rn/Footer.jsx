@@ -10,7 +10,7 @@ const SOCIALS = [
 ];
 
 export const Footer = () => (
-  <footer id="footer" data-testid="footer" className="relative overflow-hidden bg-[var(--night)] pt-16">
+  <footer id="contacts" data-testid="footer" className="relative overflow-hidden bg-[var(--night)] pt-16">
     <div className="relative z-10 mx-auto flex max-w-[1400px] flex-col items-center gap-10 px-6 pb-12 text-[var(--cream)] sm:px-10 lg:flex-row lg:justify-between lg:gap-6">
       <Logo size="sm" testId="footer-logo" />
       <div className="flex items-center gap-4">

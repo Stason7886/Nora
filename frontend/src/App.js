@@ -9,7 +9,6 @@ import { Events } from "@/components/rn/Events";
 import { Marquee } from "@/components/rn/Marquee";
 import { Footer } from "@/components/rn/Footer";
 import { Cheshire } from "@/components/rn/Cheshire";
-import { Booking } from "@/components/rn/Booking";
 import { Toaster } from "sonner";
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
       <Space />
       <Events />
       <Marquee />
-      <Booking />
       <Footer />
       <Cheshire />
       <Toaster position="top-center" richColors />

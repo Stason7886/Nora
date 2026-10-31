@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
 import { Copy, Gift, X } from "lucide-react";
-import { scrollTo } from "./ui";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const GIFT_AT = 5;
@@ -54,7 +53,7 @@ const GiftCard = ({ gift, onClose }) => {
       <button data-testid="cheshire-gift-code" onClick={copy} className="mt-4 flex w-full items-center justify-between border border-dashed border-[var(--crimson)] px-4 py-3 font-serif-rn text-lg font-bold tracking-[0.2em] text-[var(--crimson)] transition-colors hover:bg-[#a3161c]/10">
         {gift.code}<Copy className="h-4 w-4" />
       </button>
-      <button data-testid="cheshire-gift-apply" onClick={() => { onClose(); scrollTo("contacts"); }} className="mt-4 w-full rounded-full bg-[var(--crimson)] py-3 font-serif-rn text-xs font-bold uppercase tracking-[0.22em] text-[var(--cream)] transition-colors hover:bg-[var(--crimson-2)]">Применить к заявке</button>
+      <p className="mt-4 text-xs text-[var(--ink-soft)]">Назовите этот код при бронировании.</p>
     </motion.div>
   );
 };
@@ -75,7 +74,6 @@ export const Cheshire = () => {
       const { data } = await axios.get(`${API}/promo/cheshire`);
       if (!data?.code) return;
       localStorage.setItem("rn_promo", data.code);
-      window.dispatchEvent(new Event("rn-promo"));
       setGift(data);
     } catch (e) { /* кот сегодня не в духе */ }
   };
