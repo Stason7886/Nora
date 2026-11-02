@@ -9,7 +9,6 @@ export const TopHat = ({ className = "" }) => (
     <path d="M30 8c10-5 50-5 60 0l-4 58H34z" fill="#f5eedd" />
     <path d="M33 46h54l-1 12H34z" fill="#1c1613" />
     <rect x="66" y="22" width="16" height="20" rx="1" fill="#f5eedd" stroke="#1c1613" strokeWidth="1.6" transform="rotate(8 74 32)" />
-    <text x="68" y="36" fontSize="8" fontFamily="serif" fill="#1c1613" transform="rotate(8 74 32)">10/6</text>
     <path d="M8 70c18 14 86 14 104 0-6 12-98 12-104 0z" fill="#f5eedd" />
     <ellipse cx="60" cy="68" rx="48" ry="8" fill="#f5eedd" />
   </svg>
