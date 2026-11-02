@@ -1,6 +1,6 @@
 const ITEMS = [
-  { t: "Выпей меня" }, { img: "/img/ev1.jpg" }, { t: "Чаепитие у Шляпника" }, { img: "/img/interior.jpg" },
-  { t: "Съешь меня" }, { img: "/img/ev2.jpg" }, { t: "Сад Королевы" }, { img: "/img/ev3.jpg" }, { t: "Всё чудесатее" }, { img: "/img/hero.jpg" },
+  { t: "Выпей меня" }, { img: "img/ev1.jpg" }, { t: "Чаепитие у Шляпника" }, { img: "img/interior.jpg" },
+  { t: "Съешь меня" }, { img: "img/ev2.jpg" }, { t: "Сад Королевы" }, { img: "img/ev3.jpg" }, { t: "Всё чудесатее" }, { img: "img/hero.jpg" },
 ];
 
 const Row = ({ hidden }) => (

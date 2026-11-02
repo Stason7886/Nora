@@ -37,7 +37,7 @@ export const About = () => {
       <TornEdge position="top" seed={11} />
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 px-6 py-20 sm:px-10 lg:grid-cols-12 lg:gap-8 lg:py-28">
         <div className="relative order-2 flex h-[360px] items-end justify-center lg:order-1 lg:col-span-3 lg:h-[520px]">
-          <motion.img style={{ y: cupsY }} src="/img/cups.jpg" alt="Башня чайных чашек с сердечками" className="ink-fade absolute -left-6 bottom-0 h-full w-auto max-w-none mix-blend-multiply lg:-left-16" />
+          <motion.img style={{ y: cupsY }} src="img/cups.jpg" alt="Башня чайных чашек с сердечками" className="ink-fade absolute -left-6 bottom-0 h-full w-auto max-w-none mix-blend-multiply lg:-left-16" />
           <div className="absolute right-0 top-4 lg:-right-4 lg:top-10"><Note /></div>
         </div>
 
@@ -54,7 +54,7 @@ export const About = () => {
 
         <motion.div style={{ y: rabbitY }} className="order-3 mx-auto w-56 lg:col-span-2 lg:w-full">
           <motion.img
-            src="/img/rabbit.png"
+            src="img/rabbit.png"
             alt="Белый кролик с часами, гравюра"
             initial={{ opacity: 0, x: 60, rotate: 8 }}
             whileInView={{ opacity: 1, x: 0, rotate: 0 }}

@@ -37,7 +37,7 @@ export const Hero = () => {
     <section id="top" ref={ref} onMouseMove={onMove} data-testid="hero-section" className="grain relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[var(--night)] [perspective:1200px]">
       <motion.div style={{ y: bgY, x: bx }} className="absolute -inset-[4%]">
         <motion.img
-          src="/img/hero.jpg"
+          src="img/hero.jpg"
           alt="Вход в лофт Кроличья Нора через нору в корнях дерева"
           initial={{ scale: 1.25, filter: "brightness(0.2) blur(6px)" }}
           animate={{ scale: 1.05, filter: "brightness(1) blur(0px)" }}

@@ -17,7 +17,7 @@ React landing (CRA + Tailwind + framer-motion + lenis), components in /app/front
 - 2026-10-31: лендинг по макету, анимации, lenis, галерея-бегущая строка
 - 2026-10-31: Чеширский кот (угол, долгое наведение); на 5-й раз — карточка с промокодом («назовите при бронировании»)
 - 2026-10-31: форма бронирования добавлена, затем удалена по просьбе пользователя; «свадьбы» убраны из блока «О нас»
-
+- 2026-11-02: MAX link + mobile FAB, sound toggle (WebAudio ticking + purr), GitHub Pages: relative img paths + .github/workflows/deploy-pages.yml (build with PUBLIC_URL=., push to main)
 ## Backlog
 - P1: реальный адрес/телефон/ссылки соцсетей (плейсхолдеры)
 - P2: галерея с лайтбоксом, звуки

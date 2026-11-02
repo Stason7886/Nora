@@ -3,9 +3,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { OvalButton, Reveal, TornEdge, scrollTo } from "./ui";
 
 const EVENTS = [
-  { img: "/img/ev1.jpg", caption: "Дни рождения", rot: -5, y: 10 },
-  { img: "/img/ev2.jpg", caption: "Вечеринки", rot: 4, y: -10 },
-  { img: "/img/ev3.jpg", caption: "Корпоративы", rot: -2, y: 18 },
+  { img: "img/ev1.jpg", caption: "Дни рождения", rot: -5, y: 10 },
+  { img: "img/ev2.jpg", caption: "Вечеринки", rot: 4, y: -10 },
+  { img: "img/ev3.jpg", caption: "Корпоративы", rot: -2, y: 18 },
 ];
 
 const Polaroid = ({ e, i }) => (
@@ -35,8 +35,8 @@ export const Events = () => {
   return (
     <section id="events" ref={ref} data-testid="events-section" className="parchment relative z-20">
       <TornEdge position="top" seed={41} />
-      <motion.img style={{ y: flY }} src="/img/flamingo.jpg" alt="Фламинго, гравюра" className="ink-fade pointer-events-none absolute -left-24 top-10 hidden h-[85%] mix-blend-multiply md:block lg:-left-20" />
-      <motion.img style={{ rotate: wR }} src="/img/watch.jpg" alt="Карманные часы и розы" className="ink-fade pointer-events-none absolute -right-20 -bottom-6 hidden w-80 mix-blend-multiply xl:block" />
+      <motion.img style={{ y: flY }} src="img/flamingo.jpg" alt="Фламинго, гравюра" className="ink-fade pointer-events-none absolute -left-24 top-10 hidden h-[85%] mix-blend-multiply md:block lg:-left-20" />
+      <motion.img style={{ rotate: wR }} src="img/watch.jpg" alt="Карманные часы и розы" className="ink-fade pointer-events-none absolute -right-20 -bottom-6 hidden w-80 mix-blend-multiply xl:block" />
       <div className="relative mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-14 px-6 py-24 sm:px-10 md:pl-56 lg:grid-cols-12 lg:pl-48 xl:pl-56">
         <div className="lg:col-span-4">
           <Reveal><p className="eyebrow text-[var(--ink-soft)]">Мероприятия</p></Reveal>
