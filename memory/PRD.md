@@ -17,7 +17,7 @@ React landing (CRA + Tailwind + framer-motion + lenis), components in /app/front
 - 2026-10-31: лендинг по макету, анимации, lenis, галерея-бегущая строка
 - 2026-10-31: Чеширский кот (угол, долгое наведение); на 5-й раз — карточка с промокодом («назовите при бронировании»)
 - 2026-10-31: форма бронирования добавлена, затем удалена по просьбе пользователя; «свадьбы» убраны из блока «О нас»
-- 2026-11-02: MAX link + mobile FAB, sound toggle (WebAudio ticking + purr), GitHub Pages: relative img paths + .github/workflows/deploy-pages.yml (build with PUBLIC_URL=., push to main)
+- 2026-11-02: MAX link + mobile FAB, sound toggle (WebAudio ticking + purr), GitHub Pages: relative img paths + prebuilt static site in /app/docs (Pages: Deploy from branch main /docs). REBUILD docs after every frontend change: cd frontend && CI=false PUBLIC_URL=. GENERATE_SOURCEMAP=false REACT_APP_BACKEND_URL= BUILD_PATH=/app/docs yarn build && touch /app/docs/.nojekyll. Repo: github.com/Stason7886/Nora → stason7886.github.io/Nora/
 ## Backlog
 - P1: реальный адрес/телефон/ссылки соцсетей (плейсхолдеры)
 - P2: галерея с лайтбоксом, звуки
