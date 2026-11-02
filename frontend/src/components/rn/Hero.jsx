@@ -70,8 +70,7 @@ export const Hero = () => {
         </motion.div>
       </motion.div>
 
-      <motion.button data-testid="hero-scroll-hint" onClick={() => scrollTo("about")} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }} className="absolute bottom-10 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-[#f5eedd]/80 sm:flex">
-        <span className="eyebrow text-[0.65rem]">Вниз по норе</span>
+      <motion.button data-testid="hero-scroll-hint" aria-label="Прокрутить вниз" onClick={() => scrollTo("about")} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }} className="absolute bottom-10 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-[#f5eedd]/80 sm:flex">
         <span className="relative h-10 w-px overflow-hidden bg-[#f5eedd]/25"><motion.span animate={{ y: ["-100%", "100%"] }} transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }} className="absolute inset-0 bg-[var(--gold)]" /></span>
       </motion.button>
     </section>
