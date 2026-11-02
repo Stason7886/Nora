@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import { Logo, TopHat } from "./Logo";
+import { Logo } from "./Logo";
 import { scrollTo, openMax } from "./ui";
 import { SoundToggle } from "./SoundToggle";
 
@@ -73,8 +73,7 @@ export const Header = () => {
           </nav>
           <div className="flex items-center gap-3 sm:gap-6">
             <SoundToggle />
-            <button data-testid="header-book-btn" onClick={openMax} className="group hidden items-center gap-3 rounded-full border border-[#c9a45a]/70 py-2 pl-3 pr-6 font-serif-rn text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[var(--cream)] transition-colors duration-500 hover:bg-[var(--crimson)] hover:border-[var(--crimson)] sm:flex">
-              <TopHat className="h-6 w-7 transition-transform duration-500 group-hover:-rotate-12" />
+            <button data-testid="header-book-btn" onClick={openMax} className="group hidden items-center gap-3 rounded-full border border-[#c9a45a]/70 py-2 px-6 font-serif-rn text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[var(--cream)] transition-colors duration-500 hover:bg-[var(--crimson)] hover:border-[var(--crimson)] sm:flex">
               Забронировать
             </button>
             <button data-testid="burger-btn" onClick={() => setOpen(true)} aria-label="Меню" className="group flex h-10 w-10 flex-col items-end justify-center gap-[6px]">
