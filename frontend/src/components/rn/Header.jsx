@@ -63,7 +63,7 @@ export const Header = () => {
       >
         <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 sm:px-10">
           <Logo size={scrolled ? "sm" : "md"} testId="header-logo" />
-          <nav className="hidden items-center gap-10 lg:flex">
+          <nav className="hidden items-center gap-10 xl:flex">
             {NAV.map((n) => (
               <button key={n.id} data-testid={`nav-${n.id}`} onClick={() => scrollTo(n.id)} className="group relative font-serif-rn text-[0.82rem] font-bold uppercase tracking-[0.2em] text-[var(--cream)]">
                 {n.label}
