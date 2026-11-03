@@ -88,8 +88,8 @@ body {
 }
 
 .fade-right {
-    -webkit-mask-image: linear-gradient(to right, #000 70%, transparent 100%);
-    mask-image: linear-gradient(to right, #000 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 88%, transparent 100%);
 }
 
 .checker {

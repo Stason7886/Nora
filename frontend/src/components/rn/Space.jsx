@@ -47,7 +47,7 @@ export const Space = () => {
     <section id="space" ref={ref} data-testid="space-section" className="grain relative overflow-hidden bg-[var(--night)] py-24 lg:py-0">
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
         <motion.div style={{ clipPath: clip }} className="relative h-[340px] overflow-hidden sm:h-[460px] lg:col-span-6 lg:h-[680px]">
-          <motion.img style={{ y: imgY }} src="img/interior.jpg" alt="Интерьер лофта: шахматный пол, бархатные кресла и большие часы" className="fade-right absolute inset-0 h-[116%] w-full -translate-y-[8%] object-cover" />
+          <motion.img style={{ y: imgY }} src="img/space-real.jpg" alt="Интерьер лофта Кроличья Нора: экран, гирлянды, красные диваны и гость в маске кролика" className="fade-right absolute inset-0 h-[116%] w-full -translate-y-[8%] object-cover" />
         </motion.div>
         <div className="px-6 sm:px-10 lg:col-span-3 lg:px-0">
           <Reveal><p className="eyebrow text-[var(--gold)]">Пространство</p></Reveal>
