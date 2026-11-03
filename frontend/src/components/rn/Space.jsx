@@ -1,14 +1,13 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Armchair, Coffee, Flame, Flower2, Martini } from "lucide-react";
+import { Armchair, Coffee, Dices, Martini } from "lucide-react";
 import { OvalButton, Reveal, scrollTo } from "./ui";
 
 const ZONES = [
   { icon: Armchair, name: "Зал до 15 человек", hint: "Проектор, диван, музыкальное оборудование" },
-  { icon: Coffee, name: "Чайная зона", hint: "Безумное чаепитие на 24 гостя" },
-  { icon: Flame, name: "Каминная", hint: "Тихие разговоры у огня" },
-  { icon: Flower2, name: "Сад", hint: "Красные розы Королевы" },
-  { icon: Martini, name: "Бар", hint: "«Выпей меня» — фирменные коктейли" },
+  { icon: Coffee, name: "Чайная зона", hint: "Кухня, холодильник, чайник, посуда" },
+  { icon: Dices, name: "Настольные игры", hint: "Мафия, бункер, ролевые квесты" },
+  { icon: Martini, name: "Без пробкового сбора", hint: "Возможность принести с собой еду и напитки" },
 ];
 
 const ZoneCard = () => {
