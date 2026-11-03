@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { OvalButton, Reveal, TornEdge, scrollTo } from "./ui";
 
 const EVENTS = [
-  { img: "img/ev1.jpg", caption: "Аренда лофта от 1.500 р", rot: -5, y: 10 },
+  { img: "img/rent.jpg", pos: "object-[center_45%]", caption: "Аренда лофта от 1.500 р", rot: -5, y: 10 },
   { img: "img/mafia.jpg", pos: "object-[15%_center]", caption: "Игра в мафию 5.000 р", rot: 4, y: -10 },
   { img: "img/ev3.jpg", caption: "Корпоративы", rot: -2, y: 18 },
 ];
