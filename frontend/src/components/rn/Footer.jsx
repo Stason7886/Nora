@@ -2,12 +2,13 @@ import { Instagram, MapPin, Send } from "lucide-react";
 import { Ears, Logo, TopHat } from "./Logo";
 import { MAX_URL, openMax } from "./ui";
 
+const MAP_URL = "https://yandex.ru/maps/?text=" + encodeURIComponent("Санкт-Петербург, Заневский проспект, 9/8");
 const Vk = () => <span className="font-serif-rn text-base font-bold leading-none">VK</span>;
 const Max = () => <span className="font-serif-rn text-[0.8rem] font-bold leading-none">MAX</span>;
 const SOCIALS = [
-  { id: "instagram", icon: <Instagram className="h-5 w-5" /> },
-  { id: "telegram", icon: <Send className="h-5 w-5" /> },
-  { id: "vk", icon: <Vk /> },
+  { id: "instagram", icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/hare_point?dlrf=MThwM2Yzb2I3MWJ2cQ%3D%3D&utm_source=qr" },
+  { id: "telegram", icon: <Send className="h-5 w-5" />, href: "https://t.me/vika_rabbit_hole" },
+  { id: "vk", icon: <Vk />, href: "https://vk.ru/hare_point" },
   { id: "max", icon: <Max />, href: MAX_URL },
 ];
 
@@ -22,7 +23,7 @@ export const Footer = () => (
           </a>
         ))}
       </div>
-      <p data-testid="footer-address" className="flex items-center gap-2 text-sm text-[#d9cfbd]"><MapPin className="h-4 w-4 text-[var(--gold)]" />г. Санкт-Петербург, Заневский проспект, 9/8</p>
+      <a href={MAP_URL} target="_blank" rel="noopener noreferrer" data-testid="footer-address" className="group flex items-center gap-2 text-sm text-[#d9cfbd] transition-colors hover:text-[var(--gold)]"><MapPin className="h-4 w-4 text-[var(--gold)] transition-transform group-hover:-translate-y-0.5" /><span className="underline decoration-[#c9a45a]/50 underline-offset-4">г. Санкт-Петербург, Заневский проспект, 9/8</span></a>
       <div className="flex items-center gap-3 text-sm text-[#d9cfbd]">
         <p className="leading-snug">Погрузись в сказку<br />уже сегодня</p>
         <Ears className="h-10 w-12 text-[var(--cream)]" />

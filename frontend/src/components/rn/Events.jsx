@@ -41,7 +41,7 @@ export const Events = () => {
         <div className="xl:col-span-4">
           <Reveal><p className="eyebrow text-[var(--ink-soft)]">Мероприятия</p></Reveal>
           <Reveal delay={0.1}><h2 className="mt-4 font-display text-4xl font-bold leading-[1.05] sm:text-5xl">События, которые запоминаются</h2></Reveal>
-          <Reveal delay={0.2}><p className="mt-6 text-sm leading-relaxed text-[var(--ink-soft)] sm:text-base">Дни рождения, корпоративы, тематические вечеринки, творческие встречи и многое другое. Мы создаём атмосферу, в которую хочется возвращаться.</p></Reveal>
+          <Reveal delay={0.2}><p className="mt-6 text-sm leading-relaxed text-[var(--ink-soft)] sm:text-base">Детские дни рождения с аниматорами, подростковые вечеринки в стиле «Мафия», корпоративы с музыкальными квизами. Мы создаём атмосферу, в которую хочется возвращаться.</p></Reveal>
           <Reveal delay={0.3} className="mt-10"><OvalButton testId="events-all-btn" onClick={() => scrollTo("contacts")}>Все мероприятия</OvalButton></Reveal>
         </div>
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-5 xl:col-span-8 xl:pr-24">
