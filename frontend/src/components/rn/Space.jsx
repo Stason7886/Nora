@@ -4,7 +4,7 @@ import { Armchair, Coffee, Flame, Flower2, Martini } from "lucide-react";
 import { OvalButton, Reveal, scrollTo } from "./ui";
 
 const ZONES = [
-  { icon: Armchair, name: "Основной зал", hint: "Сцена, бархат и шахматный пол" },
+  { icon: Armchair, name: "Зал до 15 человек", hint: "Проектор, диван, музыкальное оборудование" },
   { icon: Coffee, name: "Чайная зона", hint: "Безумное чаепитие на 24 гостя" },
   { icon: Flame, name: "Каминная", hint: "Тихие разговоры у огня" },
   { icon: Flower2, name: "Сад", hint: "Красные розы Королевы" },
