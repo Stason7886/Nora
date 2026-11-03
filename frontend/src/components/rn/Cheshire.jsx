@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
 import { Copy, Gift, X } from "lucide-react";
-import { purr } from "@/lib/wonderSound";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const GIFT_AT = 5;
@@ -83,7 +82,6 @@ export const Cheshire = () => {
   const stop = () => { clearTimeout(timer.current); setShown(false); };
 
   useEffect(() => { return () => clearTimeout(timer.current); }, []);
-  useEffect(() => { purr(shown); }, [shown]);
 
   return (
     <>

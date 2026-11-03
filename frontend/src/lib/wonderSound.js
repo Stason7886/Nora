@@ -1,9 +1,6 @@
 let ctx = null;
 let master = null;
-let tickTimer = null;
-let purrNodes = null;
 let enabled = false;
-let tickIdx = 0;
 const listeners = new Set();
 
 const noiseBuffer = (seconds, brown = false) => {
@@ -18,22 +15,7 @@ const noiseBuffer = (seconds, brown = false) => {
   return buf;
 };
 
-const tick = () => {
-  const t = ctx.currentTime;
-  const src = ctx.createBufferSource();
-  src.buffer = noiseBuffer(0.03);
-  const bp = ctx.createBiquadFilter();
-  bp.type = "bandpass";
-  bp.frequency.value = tickIdx++ % 2 ? 2300 : 3200;
-  bp.Q.value = 6;
-  const g = ctx.createGain();
-  g.gain.setValueAtTime(0.0001, t);
-  g.gain.exponentialRampToValueAtTime(0.35, t + 0.002);
-  g.gain.exponentialRampToValueAtTime(0.0001, t + 0.03);
-  src.connect(bp).connect(g).connect(master);
-  src.start(t);
-  src.stop(t + 0.04);
-};
+let purrNodes = null;
 
 const notify = () => listeners.forEach((fn) => fn(enabled));
 
@@ -52,12 +34,12 @@ export const setSound = (on) => {
     }
     ctx.resume();
     master.gain.setTargetAtTime(0.5, ctx.currentTime, 0.2);
-    tickTimer = setInterval(tick, 1000);
-  } else {
-    clearInterval(tickTimer);
-    purr(false);
-    if (master) master.gain.setTargetAtTime(0, ctx.currentTime, 0.1);
+    notify();
+    purr(true);
+    return;
   }
+  purr(false);
+  if (master) master.gain.setTargetAtTime(0, ctx.currentTime, 0.6);
   notify();
 };
 
