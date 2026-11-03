@@ -4,7 +4,7 @@ import { OvalButton, Reveal, TornEdge, scrollTo } from "./ui";
 
 const EVENTS = [
   { img: "img/ev1.jpg", caption: "Аренда лофта от 1.500 р", rot: -5, y: 10 },
-  { img: "img/ev2.jpg", caption: "Игра в мафию 5.000 р", rot: 4, y: -10 },
+  { img: "img/mafia.jpg", pos: "object-[15%_center]", caption: "Игра в мафию 5.000 р", rot: 4, y: -10 },
   { img: "img/ev3.jpg", caption: "Корпоративы", rot: -2, y: 18 },
 ];
 
@@ -20,7 +20,7 @@ const Polaroid = ({ e, i }) => (
     className="relative cursor-pointer bg-[#f7f2e6] p-3 pb-2 shadow-[0_24px_50px_rgba(40,25,10,0.38)]"
   >
     <div className="aspect-[4/3.4] overflow-hidden">
-      <img src={e.img} alt={e.caption} className="h-full w-full object-cover transition-transform duration-700 hover:scale-110" />
+      <img src={e.img} alt={e.caption} className={`h-full w-full object-cover ${e.pos || ""} transition-transform duration-700 hover:scale-110`} />
     </div>
     <figcaption className="flex min-h-[4rem] items-center justify-center px-2 pt-2 text-center font-hand text-2xl leading-none text-[var(--ink)]">{e.caption}</figcaption>
   </motion.figure>
