@@ -51,7 +51,7 @@ export const Space = () => {
         <div className="px-6 sm:px-10 lg:col-span-3 lg:px-0">
           <Reveal><p className="eyebrow text-[var(--gold)]">Пространство</p></Reveal>
           <Reveal delay={0.1}><h2 className="mt-4 font-display text-4xl font-bold leading-[1.05] text-[var(--cream)] sm:text-5xl">Тут всё не так, как кажется</h2></Reveal>
-          <Reveal delay={0.2}><p className="mt-6 text-sm leading-relaxed text-[#d9cfbd] sm:text-base">Лофт «Кроличья нора» — это несколько зон, каждая из которых перенесёт тебя в свою историю: от чаепития у Безумного Шляпника до загадочного сада.</p></Reveal>
+          <Reveal delay={0.2}><p className="mt-6 text-sm leading-relaxed text-[#d9cfbd] sm:text-base">Лофт «Кроличья нора» — это место, где Вам не нужно думать ни о чём. Мы всё сделаем за Вас.</p></Reveal>
           <Reveal delay={0.3} className="mt-10"><OvalButton dark testId="space-gallery-btn" onClick={() => scrollTo("gallery")}>Посмотреть галерею</OvalButton></Reveal>
         </div>
         <div className="px-6 sm:px-10 lg:col-span-3 lg:pl-0 lg:pr-12">
