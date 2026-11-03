@@ -4,7 +4,7 @@ import { OvalButton, Reveal, TornEdge, scrollTo } from "./ui";
 
 const EVENTS = [
   { img: "img/ev1.jpg", caption: "Аренда лофта от 1.500 р", rot: -5, y: 10 },
-  { img: "img/ev2.jpg", caption: "Вечеринки", rot: 4, y: -10 },
+  { img: "img/ev2.jpg", caption: "Игра в мафию 5.000 р", rot: 4, y: -10 },
   { img: "img/ev3.jpg", caption: "Корпоративы", rot: -2, y: 18 },
 ];
 
