@@ -2,7 +2,7 @@ import { Instagram, MapPin, Send } from "lucide-react";
 import { Ears, Logo, TopHat } from "./Logo";
 import { MAX_URL, openMax } from "./ui";
 
-const MAP_URL = "https://yandex.ru/maps/?text=" + encodeURIComponent("Санкт-Петербург, Заневский проспект, 9/8");
+const MAP_URL = "https://yandex.ru/maps/2/saint-petersburg/?ll=30.408689%2C59.927901&mode=poi&poi%5Bpoint%5D=30.408476%2C59.928012&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D181597424363&z=19.95";
 const Vk = () => <span className="font-serif-rn text-base font-bold leading-none">VK</span>;
 const Max = () => <span className="font-serif-rn text-[0.8rem] font-bold leading-none">MAX</span>;
 const SOCIALS = [
