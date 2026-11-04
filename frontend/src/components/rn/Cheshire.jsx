@@ -44,7 +44,7 @@ const GiftCard = ({ gift, onClose }) => {
       animate={{ opacity: 1, y: 0, rotate: -2, scale: 1 }}
       exit={{ opacity: 0, y: 40, scale: 0.85 }}
       transition={{ type: "spring", stiffness: 90, damping: 13 }}
-      className="parchment fixed bottom-32 left-4 z-50 w-[min(320px,calc(100vw-2rem))] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.65)] outline-dashed outline-1 -outline-offset-8 outline-[#a3161c]/60 sm:bottom-40 sm:left-8"
+      className="parchment fixed bottom-52 left-4 z-50 w-[min(320px,calc(100vw-2rem))] p-6 shadow-[0_30px_70px_rgba(0,0,0,0.65)] outline-dashed outline-1 -outline-offset-8 outline-[#a3161c]/60 sm:bottom-60 sm:left-8"
     >
       <button data-testid="cheshire-gift-close" onClick={onClose} aria-label="Закрыть" className="absolute right-3 top-3 p-1 text-[var(--ink)] transition-transform hover:rotate-90"><X className="h-4 w-4" /></button>
       <Gift className="h-7 w-7 text-[var(--crimson)]" />
@@ -93,7 +93,7 @@ export const Cheshire = () => {
       onPointerDown={start}
       onPointerUp={stop}
       onContextMenu={(e) => e.preventDefault()}
-      className="fixed bottom-0 left-0 z-40 h-28 w-28 select-none sm:h-36 sm:w-36"
+      className="fixed bottom-20 left-0 z-40 h-28 w-28 select-none sm:h-36 sm:w-36"
       style={{ touchAction: "manipulation" }}
     >
       {!shown && (

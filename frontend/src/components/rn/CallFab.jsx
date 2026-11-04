@@ -14,7 +14,7 @@ export const CallFab = () => (
     transition={{ delay: 2, type: "spring", stiffness: 220, damping: 18 }}
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.92 }}
-    className="group fixed bottom-5 right-5 z-40 flex h-14 items-center gap-3 rounded-full bg-[var(--gold)] pl-4 pr-4 text-[var(--night)] shadow-[0_10px_30px_rgba(201,164,90,0.45)] md:pr-6"
+    className="group fixed bottom-5 left-5 z-40 flex h-14 items-center gap-3 rounded-full bg-[var(--gold)] pl-4 pr-4 text-[var(--night)] shadow-[0_10px_30px_rgba(201,164,90,0.45)] md:pr-6"
   >
     <span className="absolute inset-0 animate-ping rounded-full bg-[var(--gold)] opacity-25" style={{ animationDuration: "2.6s" }} />
     <Phone className="relative h-6 w-6 transition-transform duration-300 group-hover:rotate-12" />
