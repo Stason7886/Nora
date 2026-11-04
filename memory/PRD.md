@@ -19,6 +19,8 @@ React landing (CRA + Tailwind + framer-motion + lenis), components in /app/front
 - 2026-10-31: форма бронирования добавлена, затем удалена по просьбе пользователя; «свадьбы» убраны из блока «О нас»
 - 2026-11-02: MAX link + mobile FAB, sound toggle (WebAudio ticking + purr), GitHub Pages: relative img paths + prebuilt static site in /app/docs (Pages: Deploy from branch main /docs). REBUILD docs after every frontend change: cd frontend && CI=false PUBLIC_URL=. GENERATE_SOURCEMAP=false REACT_APP_BACKEND_URL= BUILD_PATH=/app/docs yarn build && touch /app/docs/.nojekyll. Repo: github.com/Stason7886/Nora → stason7886.github.io/Nora/
 ## Backlog
+- 2026-11-04: call FAB (tel:+79052104194), footer phone; SEO: title/description/keywords, canonical+OG (https://stason7886.github.io/Nora/), EventVenue JSON-LD, noscript, robots/sitemap/llms.txt, og-image.jpg, apple-touch-icon. Pending: Yandex Webmaster / Google Search Console verification codes from user
+- 2026-11-04: custom domain кроличья-нора78.рф (xn---78-6cd2blhsfeqg1g6c2b.xn--p1ai) on GitHub Pages; frontend/public/CNAME keeps it in docs builds; all canonical/OG/sitemap/robots URLs switched to it
 - P1: реальный адрес/телефон/ссылки соцсетей (плейсхолдеры)
 - P2: галерея с лайтбоксом, звуки
 
