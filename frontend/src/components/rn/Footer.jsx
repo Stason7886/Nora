@@ -1,6 +1,7 @@
-import { Instagram, MapPin, Send } from "lucide-react";
+import { Instagram, MapPin, Phone, Send } from "lucide-react";
 import { Ears, Logo, TopHat } from "./Logo";
 import { MAX_URL, openMax } from "./ui";
+import { PHONE, PHONE_LABEL } from "./CallFab";
 
 const MAP_URL = "https://yandex.ru/maps/2/saint-petersburg/?ll=30.408689%2C59.927901&mode=poi&poi%5Bpoint%5D=30.408476%2C59.928012&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D181597424363&z=19.95";
 const Vk = () => <span className="font-serif-rn text-base font-bold leading-none">VK</span>;
@@ -23,7 +24,10 @@ export const Footer = () => (
           </a>
         ))}
       </div>
-      <a href={MAP_URL} target="_blank" rel="noopener noreferrer" data-testid="footer-address" className="group flex items-center gap-2 text-sm text-[#d9cfbd] transition-colors hover:text-[var(--gold)]"><MapPin className="h-4 w-4 text-[var(--gold)] transition-transform group-hover:-translate-y-0.5" /><span className="underline decoration-[#c9a45a]/50 underline-offset-4">г. Санкт-Петербург, Заневский проспект, 9/8</span></a>
+      <div className="flex flex-col items-center gap-2 lg:items-start">
+        <a href={MAP_URL} target="_blank" rel="noopener noreferrer" data-testid="footer-address" className="group flex items-center gap-2 text-sm text-[#d9cfbd] transition-colors hover:text-[var(--gold)]"><MapPin className="h-4 w-4 text-[var(--gold)] transition-transform group-hover:-translate-y-0.5" /><span className="underline decoration-[#c9a45a]/50 underline-offset-4">г. Санкт-Петербург, Заневский проспект, 9/8</span></a>
+        <a href={`tel:${PHONE}`} data-testid="footer-phone" className="flex items-center gap-2 font-serif-rn text-lg font-bold text-[var(--cream)] transition-colors hover:text-[var(--gold)]"><Phone className="h-4 w-4 text-[var(--gold)]" />{PHONE_LABEL}</a>
+      </div>
       <div className="flex items-center gap-3 text-sm text-[#d9cfbd]">
         <p className="leading-snug">Погрузись в сказку<br />уже сегодня</p>
         <Ears className="h-10 w-12 text-[var(--cream)]" />
@@ -33,7 +37,7 @@ export const Footer = () => (
         <TopHat className="h-6 w-7 transition-transform duration-500 group-hover:rotate-12" />
       </button>
     </div>
-    <p className="relative z-10 pb-6 text-center text-xs text-[#bfb4a2]">© 2026 Кроличья Нора · Лофт</p>
+    <p className="relative z-10 px-6 pb-6 text-center text-xs text-[#bfb4a2]">© 2026 Кроличья Нора · Аренда лофта для праздников, детских дней рождения и игры в мафию в Санкт-Петербурге</p>
     <div className="relative h-40 [perspective:500px] sm:h-52">
       <div className="checker absolute -inset-x-1/2 bottom-[-60%] top-0 origin-top [transform:rotateX(62deg)]" />
       <div className="absolute inset-0 bg-gradient-to-b from-[var(--night)] via-[#0f0c0e]/40 to-transparent" />
